@@ -15,10 +15,8 @@ declare -a REQ_BINARIES=()
 init(){
     while read binary
     do
-      if [[ ! ${binary} =~ "#" ]]; then
-        if [[ ! ${binary} == "" ]]; then
+      if [[ ! ${binary} =~ "#" ]] && [[ ! ${binary} == "" ]] ; then
             REQ_BINARIES+=( "${binary}" )
-        fi
       fi
     done < ./versions.txt
 }
